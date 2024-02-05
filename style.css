@@ -2,6 +2,7 @@ body {
     width: 100%;
     margin: 0%;
     text-decoration: none;
+    background-color: rgb(29, 28, 28);
 }
 
 ul ,li {
@@ -15,11 +16,19 @@ ul ,li {
     width: 100%;
     display: flex;
     padding: 15px;
+    text-align: center;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(to right, red, violet, indigo, blue, rgb(0, 183, 255), green, yellow, orange, red);
+    border-image-slice: 1;
 }
 
-.container li {
-    margin-left: 15px;
+.card {
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
     font-size: 16px;
+    position: relative;
+    cursor: pointer;
 }
 
 
@@ -29,24 +38,12 @@ a {
     text-transform: lowercase;
 }
 
-/* .hidden {
-    display: none;
-} */
 .hidden {
     display: none;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 1s ease, transform 1s ease;
 }
-
-.drop_down {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* .drop_down_list {
-} */
 
 #promotions {
     text-transform: uppercase;
@@ -61,6 +58,10 @@ a {
     to {top: 10px;}
 } */
 
+/* .drop_down_menu {
+    position: relative;
+} */
+
 .drop_down_menu::after {
     content: url('assets/arrow_down.svg');
     padding-left: 5px;
@@ -69,4 +70,10 @@ a {
 
 .drop_down_menu:hover::after {
     content: url('assets/arrow_up.svg');
+}
+
+.drop_down_list {
+    position: absolute;
+    top: 100%;
+    left: -30px;
 }
