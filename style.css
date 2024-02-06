@@ -16,10 +16,10 @@ ul ,li {
     width: 100%;
     display: flex;
     padding: 15px;
-    text-align: center;
     border-bottom: 4px solid;
     border-image: linear-gradient(to right, red, violet, indigo, blue, rgb(0, 183, 255), green, yellow, orange, red);
     border-image-slice: 1;
+    background-color: #F4F4F4;
 }
 
 .card {
@@ -62,18 +62,18 @@ a {
     position: relative;
 } */
 
-.drop_down_menu::after {
+#drop_down_menu::after {
     content: url('assets/arrow_down.svg');
     padding-left: 5px;
 }
 
 
-.drop_down_menu:hover::after {
+#drop_down_menu:hover::after {
     content: url('assets/arrow_up.svg');
 }
 
 .drop_down_list {
+    display: flex;
     position: absolute;
     top: 100%;
-    left: -30px;
 }
