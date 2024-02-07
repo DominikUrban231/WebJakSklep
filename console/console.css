@@ -1,0 +1,13 @@
+#console {
+    height: 75vh;
+    width: 90vw;
+    margin: auto;
+    background-color: rgb(24, 24, 24);
+}
+
+#consoleInput {
+    margin-top: auto;
+    bottom: 15px;
+    width: 90%;
+    height: 30px;
+}
