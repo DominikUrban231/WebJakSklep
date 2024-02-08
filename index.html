@@ -41,7 +41,7 @@
         </ul>
         <ul class="hidden drop_down_list">
             <li>
-                <a  href="#kremy" title="Kremy">Kremy</a>
+                <a class="bold" href="#kremy" title="Kremy">Kremy</a>
                 <ul>
                     <li><a href="#kremy-nawilzajace" title="Kremy nawilżające">Kremy nawilżające</a></li>
                     <li><a href="#kremy-odżywcze" title="Kremy odżywcze">Kremy odżywcze</a></li>
@@ -50,7 +50,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#serum" title="Serum">Serum</a>
+                <a class="bold" href="#serum" title="Serum">Serum</a>
                 <ul>
                     <li><a href="#serum-nawilzajace" title="Serum nawilżające">Serum nawilżające</a></li>
                     <li><a href="#serum-odżywcze" title="Serum odżywcze">Serum odżywcze</a></li>
@@ -61,7 +61,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#serum" title="Oczyszczanie twarzy">Oczyszczanie twarzy</a>
+                <a class="bold" href="#serum" title="Oczyszczanie twarzy">Oczyszczanie twarzy</a>
                 <ul>
                     <li><a href="#zele" title="Żele do mycia twarzy">Żele do mycia twarzy</a></li>
                     <li><a href="#pianki" title="Pianki do mycia twarzy">Pianki do mycia twarzy</a></li>
@@ -73,19 +73,25 @@
     </div>
 
     <section>
-        <div id="serchbar">
-            <input type="text" name="searchInput" id="searchInput">
+        <div> 
+            <div id="searchbar">
+                <label class="searchbarLabel" for="searchInput">Search</label>
+                <input type="text" name="searchInput" id="searchInput">    
+            </div>
         </div>
         <ul id="suggestionsList">
+            <div id="rectangle"></div>
         </ul>
     </section>
 
     <section>
         <div id="console">
-            <div id="consoleOutputWrapper"></div>
-            <div id="consoleInputWrapper">
-                <input id="consoleInput" type="text">
-            </div>
+            <div id="consoleScreen">
+                <div id="consoleOutputWrapper"></div>
+                <div id="consoleInputWrapper">
+                    <input id="consoleInput" type="text">
+                </div>
+            </div>    
         </div>
     </section>
 

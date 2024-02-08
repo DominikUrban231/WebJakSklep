@@ -1,8 +1,17 @@
 #console {
+    border-radius: 10px;
+}
+
+#consoleScreen {
+    font-family: Roboto Mono;
     height: 75vh;
     width: 90vw;
     margin: auto;
     background-color: rgb(24, 24, 24);
+}
+
+#consoleOutputWrapper {
+    height: 90%;
 }
 
 #consoleInput {

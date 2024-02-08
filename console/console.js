@@ -41,9 +41,9 @@ const helpKomand = () => {
     insertAnswer(customCommandsMessage)
 }
 
-const double = () => {
-    const inputValue = consoleInput.value.trim().toLowerCase();
-    return 
+const double = (a) => {
+    const double = 2 * a;
+    insertAnswer(double);
 }
 
 const commands = {
@@ -63,23 +63,20 @@ const commands = {
 const executeCommand = (event) => {
     if (event.key === 'Enter') {
         const inputValue = event.target.value.trim().toLowerCase();
-        const hasNumbers = /\d/.test(inputValue);
+        const inputValueWithoutSpace = inputValue.replace(/\s+/g, '');
+
+        const hasNumbers = /\d/.test(inputValueWithoutSpace);
         let commandKey;
         let numberArgument = null;
-
         if (hasNumbers) {
-            // Jeśli inputValue zawiera cyfry, wyodrębnij liczbę i przypisz ją do numberArgument
-            const match = inputValue.match(/\d+/);
+            const match = inputValueWithoutSpace.match(/\d+/);
             numberArgument = match ? parseInt(match[0]) : null;
-            
-            // Usuń cyfry ze stringa, aby uzyskać klucz
-            commandKey = inputValue.replace(/\d/g, '');
+            commandKey = inputValueWithoutSpace.replace(/\d/g, '');
         } else {
-            commandKey = inputValue;
+            commandKey = inputValueWithoutSpace;
         }
-
+        console.log(commandKey, numberArgument)
         if (commands.systemCommands.hasOwnProperty(commandKey)) {
-            // Przekazujemy numberArgument jako argument do funkcji, jeśli istnieje
             commands.systemCommands[commandKey](numberArgument);
         } else {
             insertAnswer(`This command does not exist: "${inputValue}".`);

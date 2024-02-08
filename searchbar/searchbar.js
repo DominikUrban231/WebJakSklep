@@ -1,8 +1,23 @@
 const url = 'https://dummyjson.com/products/search?q=XXX&limit=5&delay=1000';
 const input = document.getElementById('searchInput');
+const label = document.querySelector('.searchbarLabel');
 const suggestionsList = document.getElementById('suggestionsList');
+const loadingImg = document.querySelector('#searchbar::before');
 
-input.addEventListener('input', displaySuggestions);
+input.addEventListener('focus', () => {
+    label.classList.toggle('active_label', true);
+});
+
+input.addEventListener('blur', () => {
+    if (input.value === '') {
+        label.classList.remove('active_label');
+    }
+});
+
+input.addEventListener('input', () => {
+    // loadingImg.classList.add('showLoading');
+    displaySuggestions();
+});
 
 async function displaySuggestions() {
     const searchText = input.value.trim();
@@ -21,11 +36,13 @@ async function displaySuggestions() {
         
         listItemPrice.textContent = `$${suggestion.price}`;
         listItemName.textContent = suggestion.title;
-        listItem.appendChild(listItemName).appendChild(listItemPrice);
+        listItem.appendChild(listItemName);
+        listItem.appendChild(listItemPrice);
         listItem.classList.add('listItem');
 
         suggestionsList.appendChild(listItem);
     });
+    document.querySelector('#searchbar::before').classList.remove('showLoading');
 }
 
 async function getSuggestions(text) {
