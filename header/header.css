@@ -2,8 +2,6 @@ body {
     width: 100%;
     margin: 0%;
     text-decoration: none;
-    font-size: 24px;
-
 }
 
 ul ,li {
@@ -23,6 +21,7 @@ ul ,li {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: #F4F4F4;
+    text-transform: lowercase;
 }
 
 .card {
@@ -31,22 +30,20 @@ ul ,li {
     margin-left: 35px;
     position: relative;
     cursor: pointer;
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
 }
-
 
 a {
     text-decoration: none;
     color: black;
-    text-transform: lowercase;
 }
 
-/* .hidden {
+.hidden {
     display: none;
     opacity: 0;
     transform: translateY(-8px);
-    transition: opacity 1s ease, transform 1s ease;
-} */
+}
 
 #promotions {
     text-transform: uppercase;
@@ -57,32 +54,35 @@ a {
     border-radius: 5px;
 }
 
-/* .drop_down_menu {
-    position: relative;
-} */
-
-#drop_down_menu::after {
+.drop_down::after {
     content: url('assets/arrow_down.svg');
     padding-left: 5px;
 }
 
 
-#drop_down_menu:hover::after {
+.drop_down:hover::after {
     content: url('assets/arrow_up.svg');
 }
 
 .drop_down_list {
     display: flex;
     position: absolute;
+    padding-top: 15px;
     padding-left: 49px;
     background-color: #F4F4F4;
     text-transform: capitalize;
+    font-family: 'Inter';
+    font-size: 13px;
+    width: 100%;
+    z-index: 3;
 }
 
-.drop_down_list div {
-    text-transform: capitalize !important;
+.drop_down_list li {
+    padding-right: 6%;
+    padding-bottom: 5px;
 }
 
 .bold {
     font-weight: bold;
+    padding-bottom: 10px;
 }

@@ -1,17 +1,31 @@
 #console {
     border-radius: 10px;
+    height: 90vh;
+    padding-bottom: 100px;
+
 }
 
 #consoleScreen {
-    font-family: Roboto Mono;
-    height: 75vh;
+    font-family: 'Roboto Mono';
+    height: 100%;
+    border-radius: 5px;
     width: 90vw;
     margin: auto;
     background-color: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: column;
 }
 
 #consoleOutputWrapper {
-    height: 90%;
+    color: white;
+    width: 90%;
+    display: block;
+    margin: auto;
+    flex-grow: 1;
+}
+
+#consoleOutputWrapper p {
+    font-family: 'Roboto Mono';
 }
 
 #consoleInput {
@@ -19,4 +33,8 @@
     bottom: 15px;
     width: 90%;
     height: 30px;
+    margin-bottom: 15px;
+    margin-inline: auto;
+    padding-inline: 15px;
+    display: block;
 }
